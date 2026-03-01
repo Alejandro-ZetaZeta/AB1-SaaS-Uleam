@@ -1,0 +1,311 @@
+/* =========================================================
+   styles.css — Estilos personalizados complementarios a Tailwind
+   ========================================================= */
+
+/* ------ Paleta de colores institucional ULEAM ------ */
+:root {
+  --uleam-primary: #0e4a84;
+  --uleam-secondary: #1a6bb5;
+  --uleam-accent: #38bdf8;
+  --uleam-gold: #f59e0b;
+  --uleam-surface: rgba(255, 255, 255, 0.08);
+  --uleam-glass: rgba(255, 255, 255, 0.12);
+  --uleam-glass-border: rgba(255, 255, 255, 0.18);
+  --gradient-start: #0f172a;
+  --gradient-mid: #0e4a84;
+  --gradient-end: #1a6bb5;
+}
+
+/* ------ Background animado ------ */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg,
+      var(--gradient-start) 0%,
+      var(--gradient-mid) 50%,
+      var(--gradient-end) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ------ Glassmorphism card ------ */
+.glass-card {
+  background: var(--uleam-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--uleam-glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ------ Inputs estilizados ------ */
+.form-input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #000000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input::placeholder {
+  color: rgba(203, 213, 225, 0.5);
+}
+
+.form-input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--uleam-accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+  outline: none;
+}
+
+.form-input:hover:not(:focus) {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Select custom arrow */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+}
+
+/* ------ Botones ------ */
+.btn-primary {
+  background: linear-gradient(135deg, var(--uleam-accent), #0ea5e9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.2),
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.35);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ------ Animación de entrada ------ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger para los campos del formulario */
+.form-group {
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.form-group:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.form-group:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+.form-group:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.form-group:nth-child(6) {
+  animation-delay: 0.30s;
+}
+
+.form-group:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.form-group:nth-child(8) {
+  animation-delay: 0.40s;
+}
+
+.form-group:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+.form-group:nth-child(10) {
+  animation-delay: 0.50s;
+}
+
+.form-group:nth-child(11) {
+  animation-delay: 0.55s;
+}
+
+.form-group:nth-child(12) {
+  animation-delay: 0.60s;
+}
+
+/* ------ Toast de notificación ------ */
+.toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+/* ------ Decoración con orbes de fondo ------ */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--uleam-accent);
+  top: -150px;
+  right: -100px;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--uleam-gold);
+  bottom: -100px;
+  left: -100px;
+  animation: orbFloat 10s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+/* ------ Validación visual ------ */
+.form-input.invalid {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
+}
+
+.form-input.valid {
+  border-color: #34d399;
+}
+
+/* ------ Spinner de carga ------ */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------ Responsive tweaks ------ */
+@media (max-width: 640px) {
+  .glass-card {
+    margin: 1rem;
+    padding: 1.5rem !important;
+  }
+
+  .orb {
+    display: none;
+  }
+}
+
+/* ------ Materia rows dinámicas ------ */
+.materia-row {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.materia-row .btn-eliminar-materia {
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.materia-row:hover .btn-eliminar-materia {
+  opacity: 1;
+}
