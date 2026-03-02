@@ -39,7 +39,7 @@
     <link rel="icon" href="uleamicon401.ico" type="image/x-icon" />
 </head>
 
-<body class="font-sans text-slate-100 antialiased relative overflow-x-hidden">
+<body class="font-sans text-slate-800 antialiased relative overflow-x-hidden">
     <!-- Orbes decorativos de fondo -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -52,7 +52,7 @@
             <header class="text-center mb-8 animate-fade-in-up">
                 <div class="inline-flex items-center gap-3 mb-4">
                     <div
-                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/25">
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-200 via-sky-300 to-blue-400 flex items-center justify-center shadow-lg shadow-sky-500/25">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -66,7 +66,7 @@
                         </h1>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm max-w-md mx-auto">
+                <p class="text-slate-100 text-sm max-w-md mx-auto">
                     Completa los datos para generar automáticamente tu oficio de justificación académica
                 </p>
             </header>
@@ -89,7 +89,7 @@
                         <!-- Nombre Completo -->
                         <div class="form-group md:col-span-2">
                             <label for="nombre"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Nombre Completo
                             </label>
                             <input type="text" id="nombre" class="form-input w-full rounded-lg px-4 py-2.5 text-sm"
@@ -99,7 +99,7 @@
                         <!-- Cédula -->
                         <div class="form-group">
                             <label for="cedula"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Cédula de Identidad
                             </label>
                             <input type="text" id="cedula" data-numeric
@@ -110,7 +110,7 @@
                         <!-- Teléfono -->
                         <div class="form-group">
                             <label for="telefono"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Teléfono
                             </label>
                             <input type="text" id="telefono" data-numeric
@@ -121,22 +121,22 @@
                         <!-- Período Académico -->
                         <div class="form-group">
                             <label for="periodo"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Período Académico
                             </label>
-                            <select id="periodo"
-                                class="form-input form-select w-full rounded-lg px-4 py-2.5 text-sm cursor-pointer">
-                                <option value="--Selecciona tu periodo--">--Selecciona tu periodo--</option>
-                                <option value="2026-1">2026-1</option>
-                                <option value="2026-2">2026-2</option>
-                                <option value="2027-1">2027-1</option>
+                            <select id="periodo" required
+                                class="form-input form-select w-full rounded-lg px-4 py-2.5 text-sm cursor-pointer invalid:text-slate-400">
+                                <option value="" disabled selected>--Selecciona tu periodo--</option>
+                                <option value="2026-1" class="text-black">2026-1</option>
+                                <option value="2026-2" class="text-black">2026-2</option>
+                                <option value="2027-1" class="text-black">2027-1</option>
                             </select>
                         </div>
 
                         <!-- Correo Institucional -->
                         <div class="form-group">
                             <label for="correoInsti"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Correo Institucional
                             </label>
                             <input type="email" id="correoInsti"
@@ -147,17 +147,37 @@
                         <!-- Carrera -->
                         <div class="form-group md:col-span-2">
                             <label for="carrera"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Carrera
                             </label>
                             <input type="text" id="carrera" class="form-input w-full rounded-lg px-4 py-2.5 text-sm"
                                 placeholder="Ej: Tecnologías de la Información" />
                         </div>
 
+                        <!-- Semestre -->
+                        <div class="form-group">
+                            <label for="nivel"
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
+                                Semestre
+                            </label>
+                            <input type="text" id="nivel" class="form-input w-full rounded-lg px-4 py-2.5 text-sm"
+                                placeholder="Ej: Quinto" />
+                        </div>
+
+                        <!-- Paralelo -->
+                        <div class="form-group">
+                            <label for="paralelo"
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
+                                Paralelo
+                            </label>
+                            <input type="text" id="paralelo" class="form-input w-full rounded-lg px-4 py-2.5 text-sm"
+                                placeholder="Ej: A" />
+                        </div>
+
                         <!-- Motivo -->
                         <div class="form-group md:col-span-2">
                             <label for="motivo"
-                                class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                                class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1.5">
                                 Motivo de Justificación
                             </label>
                             <textarea id="motivo" rows="3"
@@ -185,38 +205,31 @@
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Semestre</label>
-                                    <input type="text" name="nivel"
-                                        class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm"
-                                        placeholder="Ej: 5to" />
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Paralelo</label>
-                                    <input type="text" name="paralelo"
-                                        class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm"
-                                        placeholder="Ej: A" />
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Asignatura</label>
+                                        class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Asignatura</label>
                                     <input type="text" name="materia"
                                         class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm"
                                         placeholder="Ej: Prog. Web" />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Docente</label>
+                                        class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Docente</label>
                                     <input type="text" name="docente"
                                         class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm"
                                         placeholder="Ej: Ing. López" />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Horas</label>
+                                        class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Horas
+                                        Clase</label>
                                     <input type="text" name="horas"
                                         class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm"
-                                        placeholder="Ej: 4" />
+                                        placeholder="Ej: 08:00-10:00" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-0.5">Fecha</label>
+                                    <input type="date" name="fecha"
+                                        class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm text-black" />
                                 </div>
                             </div>
                         </div>
@@ -257,7 +270,7 @@
             </div>
 
             <!-- Footer -->
-            <footer class="text-center mt-8 text-slate-500 text-xs animate-fade-in-up" style="animation-delay: 0.3s">
+            <footer class="text-center mt-8 text-slate-400 text-xs animate-fade-in-up" style="animation-delay: 0.3s">
                 <p>ULEAM — Universidad Laica Eloy Alfaro de Manabí</p>
                 <p class="mt-1">Automatización de Documentos Académicos</p>
             </footer>

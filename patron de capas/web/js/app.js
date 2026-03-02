@@ -14,17 +14,18 @@ const CAMPOS_PERSONALES = [
   { id: "telefono", etiqueta: "Teléfono" },
   { id: "correoInsti", etiqueta: "Correo Institucional" },
   { id: "carrera", etiqueta: "Carrera" },
+  { id: "nivel", etiqueta: "Semestre" },
+  { id: "paralelo", etiqueta: "Paralelo" },
   { id: "motivo", etiqueta: "Motivo de Justificación" },
 ];
 
 // ---- Campos de cada materia (se repiten por fila) ----
-const CAMPOS_MATERIA = ["nivel", "paralelo", "materia", "docente", "horas"];
+const CAMPOS_MATERIA = ["materia", "docente", "horas", "fecha"];
 const ETIQUETAS_MATERIA = {
-  nivel: "Semestre",
-  paralelo: "Paralelo",
   materia: "Asignatura",
   docente: "Docente",
-  horas: "Horas",
+  horas: "Horas Clase",
+  fecha: "Fecha a Justificar",
 };
 
 const PERIODOS_ACADEMICOS_DEFAULT = "--Selecciona tu periodo--";
@@ -78,24 +79,20 @@ function agregarMateria() {
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
       <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Semestre</label>
-        <input type="text" name="nivel" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: 5to" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Paralelo</label>
-        <input type="text" name="paralelo" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: A" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Asignatura</label>
+        <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Asignatura</label>
         <input type="text" name="materia" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: Prog. Web" />
       </div>
       <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Docente</label>
+        <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Docente</label>
         <input type="text" name="docente" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: Ing. López" />
       </div>
       <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Horas</label>
-        <input type="text" name="horas" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: 4" />
+        <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Horas Clase</label>
+        <input type="text" name="horas" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" placeholder="Ej: 08:00-10:00" />
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-0.5">Fecha</label>
+        <input type="date" name="fecha" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" />
       </div>
     </div>
   `;
@@ -143,14 +140,24 @@ function recolectarDatos() {
 
   // Array de materias (para el loop en el template)
   const materias = [];
+  const nivelGlobal = document.getElementById("nivel").value.trim();
+  const paraleloGlobal = document.getElementById("paralelo").value.trim();
+
   document.querySelectorAll(".materia-row").forEach((row) => {
     const materia = {};
     CAMPOS_MATERIA.forEach((campo) => {
       const input = row.querySelector(`input[name="${campo}"]`);
-      materia[campo] = input ? input.value.trim() : "";
+      let valor = input ? input.value.trim() : "";
+      // Formatear fecha de yyyy-mm-dd a dd/mm/yyyy
+      if (campo === "fecha" && valor) {
+        const [y, m, d] = valor.split("-");
+        valor = `${d}/${m}/${y}`;
+      }
+      materia[campo] = valor;
     });
-    // Agregar la fecha a cada fila de materia (la tabla tiene columna Fecha)
-    materia.fecha = obtenerFechaActual();
+    // Inyectar nivel y paralelo estáticos en cada fila
+    materia.nivel = nivelGlobal;
+    materia.paralelo = paraleloGlobal;
     materias.push(materia);
   });
 
