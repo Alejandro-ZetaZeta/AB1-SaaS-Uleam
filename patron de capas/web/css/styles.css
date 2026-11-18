@@ -49,16 +49,32 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* La tarjeta del formulario bloquea el fondo animado para mantener el texto legible */
+.form-card {
+  background: linear-gradient(135deg, #0f172a 0%, #0e4a84 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
 /* ------ Inputs estilizados ------ */
 .form-input {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #000000;
+  color: #f8fafc;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input::placeholder {
-  color: rgba(203, 213, 225, 0.5);
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.form-input[type="date"] {
+  color-scheme: dark;
+}
+
+select.form-input option {
+  color: #0f172a;
+  background: #ffffff;
 }
 
 .form-input:focus {
@@ -253,6 +269,50 @@ body {
   50% {
     transform: translate(30px, -30px);
   }
+}
+
+/* ------ Combobox de carreras ------ */
+.combobox-list {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
+  scrollbar-width: thin;
+}
+
+.combobox-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.combobox-list::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 9999px;
+}
+
+.combobox-option {
+  padding: 0.6rem 0.85rem;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.combobox-option:hover,
+.combobox-option.is-active {
+  background: rgba(56, 189, 248, 0.18);
+  color: #f8fafc;
+}
+
+.combobox-option[aria-selected="true"] {
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.combobox-empty {
+  padding: 0.6rem 0.85rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
 }
 
 /* ------ Validación visual ------ */
