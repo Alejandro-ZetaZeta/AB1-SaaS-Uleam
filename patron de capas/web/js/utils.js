@@ -29,6 +29,16 @@ export function formatearFechaLarga(fechaISO) {
 }
 
 /**
+ * Convierte una fecha yyyy-mm-dd a dd/mm/yyyy.
+ * @param {string} fechaISO — Fecha en formato yyyy-mm-dd
+ * @returns {string} Fecha formateada
+ */
+export function formatearFechaCorta(fechaISO) {
+  const [anio, mes, dia] = fechaISO.split("-");
+  return `${dia}/${mes}/${anio}`;
+}
+
+/**
  * Obtiene la fecha actual formateada como "dd de mes de yyyy".
  * @returns {string} Fecha formateada
  */

@@ -3,7 +3,7 @@
  * Maneja los eventos del formulario, validación, materias dinámicas y orquestación.
  */
 
-import { obtenerFechaActual, formatearFechaLarga } from "./utils.js";
+import { obtenerFechaActual, formatearFechaCorta } from "./utils.js";
 import { generarDocumento } from "./docGenerator.js";
 
 // ---- Definición de campos personales (datos que NO se repiten) ----
@@ -375,9 +375,9 @@ function recolectarDatos() {
     CAMPOS_MATERIA.forEach((campo) => {
       const input = row.querySelector(`input[name="${campo}"]`);
       let valor = input ? input.value.trim() : "";
-      // Formatear fecha de yyyy-mm-dd a "dd de mes de yyyy"
+      // Formatear fecha de yyyy-mm-dd a dd/mm/yyyy
       if (campo === "fecha" && valor) {
-        valor = formatearFechaLarga(valor);
+        valor = formatearFechaCorta(valor);
       }
       materia[campo] = valor;
     });
