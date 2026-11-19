@@ -35,36 +35,36 @@ const PATRON_CORREO_INSTITUCIONAL = /^e\d{10}@live\.uleam\.edu\.ec$/;
 // ---- Carreras y su coordinador ----
 const CARRERAS = [
   // ACVT
-  { nombre: "Tecnologías de la Información", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Eléctrica", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Ingeniería Civil", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Agropecuaria", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Software", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Arquitectura", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Alimentos", coordinador: { grado: "LICENCIADA.", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Tecnologías de la Información", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Eléctrica", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Ingeniería Civil", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Agropecuaria", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Software", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Arquitectura", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Alimentos", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
   // ACS
-  { nombre: "Enfermería", coordinador: { grado: "Dr.", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
-  { nombre: "Fisioterapia", coordinador: { grado: "Dr.", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
-  { nombre: "Nutrición y Dietética", coordinador: { grado: "Dr.", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
-  { nombre: "Medicina", coordinador: { grado: "Dr.", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
-  { nombre: "Odontología", coordinador: { grado: "Dr.", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
+  { nombre: "Enfermería", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
+  { nombre: "Fisioterapia", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
+  { nombre: "Nutrición y Dietética", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
+  { nombre: "Medicina", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
+  { nombre: "Odontología", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
   // ACA
-  { nombre: "Administración de Empresas", coordinador: { grado: "DRA.", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
-  { nombre: "Agronegocios", coordinador: { grado: "DRA.", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
+  { nombre: "Administración de Empresas", coordinador: { grado: "Doctora", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
+  { nombre: "Agronegocios", coordinador: { grado: "Doctora", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
   // ACE
-  { nombre: "Pedagogía de las Ciencias Experimentales", coordinador: { grado: "LIC.", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Psicología Educativa", coordinador: { grado: "LIC.", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Educación Básica", coordinador: { grado: "LIC.", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Educación Inicial", coordinador: { grado: "LIC.", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
+  { nombre: "Pedagogía de las Ciencias Experimentales", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
+  { nombre: "Psicología Educativa", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
+  { nombre: "Educación Básica", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
+  { nombre: "Educación Inicial", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
   // APINE
-  { nombre: "Pedagogía de los Idiomas Nacionales y Extranjeros", coordinador: { grado: "LIC.", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
-  { nombre: "Educación Inicial Bilingüe", coordinador: { grado: "LIC.", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
-  { nombre: "Educación Básica Bilingüe", coordinador: { grado: "LIC.", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
+  { nombre: "Pedagogía de los Idiomas Nacionales y Extranjeros", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
+  { nombre: "Educación Inicial Bilingüe", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
+  { nombre: "Educación Básica Bilingüe", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
   // AAP
-  { nombre: "Artes Plásticas", coordinador: { grado: "LIC.", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
-  { nombre: "Entrenamiento Deportivo", coordinador: { grado: "LIC.", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
+  { nombre: "Artes Plásticas", coordinador: { grado: "Licenciado", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
+  { nombre: "Entrenamiento Deportivo", coordinador: { grado: "Licenciado", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
   // AD
-  { nombre: "Derecho", coordinador: { grado: "AB.", nombre: "JOSE EUGENIO ZAMBRANO MENDIETA", cargo: "Coordinador" } },
+  { nombre: "Derecho", coordinador: { grado: "Abogado", nombre: "JOSE EUGENIO ZAMBRANO MENDIETA", cargo: "Coordinador" } },
   // Sin coordinador
   { nombre: "Gastronomía", coordinador: null },
   { nombre: "Electromecánica", coordinador: null },
@@ -394,6 +394,12 @@ function recolectarDatos() {
   datos.coordinador_grado = carrera?.coordinador?.grado || "";
   datos.coordinador_nombre = carrera?.coordinador?.nombre || "SIN COORDINADOR";
   datos.coordinador_cargo = carrera?.coordinador?.cargo || "Coordinador";
+
+  // Singular/plural se decide al generar, con las materias que existan en ese momento
+  datos.texto_docentes =
+    materias.length === 1
+      ? "con el siguiente docente:"
+      : "con los siguientes docentes:";
 
   datos.materias = materias;
   return datos;
