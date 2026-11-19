@@ -20,11 +20,12 @@ const CAMPOS_PERSONALES = [
 ];
 
 // ---- Campos de cada materia (se repiten por fila) ----
-const CAMPOS_MATERIA = ["materia", "docente", "horas", "fecha"];
+const CAMPOS_MATERIA = ["materia", "docente", "hora_inicio", "hora_fin", "fecha"];
 const ETIQUETAS_MATERIA = {
   materia: "Asignatura",
   docente: "Docente",
-  horas: "Horas Clase",
+  hora_inicio: "Hora de inicio",
+  hora_fin: "Hora de fin",
   fecha: "Fecha a Justificar",
 };
 
@@ -35,13 +36,13 @@ const PATRON_CORREO_INSTITUCIONAL = /^e\d{10}@live\.uleam\.edu\.ec$/;
 // ---- Carreras y su coordinador ----
 const CARRERAS = [
   // ACVT
-  { nombre: "Tecnologías de la Información", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Eléctrica", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Ingeniería Civil", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Agropecuaria", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Software", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Arquitectura", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
-  { nombre: "Alimentos", coordinador: { grado: "Licenciada", nombre: "MARTHA LORENA MENDOZA NAVARRETE", cargo: "Coordinadora" } },
+  { nombre: "Tecnologías de la Información", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Eléctrica", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Ingeniería Civil", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Agropecuaria", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Software", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Arquitectura", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
+  { nombre: "Alimentos", coordinador: { grado: "Licenciada", nombre: "Martha Lorena Mendoza Navarrete", cargo: "Coordinadora" } },
   // ACS
   { nombre: "Enfermería", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
   { nombre: "Fisioterapia", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
@@ -49,22 +50,22 @@ const CARRERAS = [
   { nombre: "Medicina", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
   { nombre: "Odontología", coordinador: { grado: "Doctor", nombre: "Miguel Luis Delgado Mendoza", cargo: "Coordinador" } },
   // ACA
-  { nombre: "Administración de Empresas", coordinador: { grado: "Doctora", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
-  { nombre: "Agronegocios", coordinador: { grado: "Doctora", nombre: "KAREN ALEJANDRA MENDOZA GARCÍA", cargo: "Coordinadora" } },
+  { nombre: "Administración de Empresas", coordinador: { grado: "Doctora", nombre: "Karen Alejandra Mendoza García", cargo: "Coordinadora" } },
+  { nombre: "Agronegocios", coordinador: { grado: "Doctora", nombre: "Karen Alejandra Mendoza García", cargo: "Coordinadora" } },
   // ACE
-  { nombre: "Pedagogía de las Ciencias Experimentales", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Psicología Educativa", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Educación Básica", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
-  { nombre: "Educación Inicial", coordinador: { grado: "Licenciado", nombre: "ORLEY REYES MEZA", cargo: "Coordinador" } },
+  { nombre: "Pedagogía de las Ciencias Experimentales", coordinador: { grado: "Licenciado", nombre: "Orley Reyes Meza", cargo: "Coordinador" } },
+  { nombre: "Psicología Educativa", coordinador: { grado: "Licenciado", nombre: "Orley Reyes Meza", cargo: "Coordinador" } },
+  { nombre: "Educación Básica", coordinador: { grado: "Licenciado", nombre: "Orley Reyes Meza", cargo: "Coordinador" } },
+  { nombre: "Educación Inicial", coordinador: { grado: "Licenciado", nombre: "Orley Reyes Meza", cargo: "Coordinador" } },
   // APINE
-  { nombre: "Pedagogía de los Idiomas Nacionales y Extranjeros", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
-  { nombre: "Educación Inicial Bilingüe", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
-  { nombre: "Educación Básica Bilingüe", coordinador: { grado: "Licenciado", nombre: "RIDER ELOY MENDOZA SALTOS", cargo: "Coordinador" } },
+  { nombre: "Pedagogía de los Idiomas Nacionales y Extranjeros", coordinador: { grado: "Licenciado", nombre: "Rider Eloy Mendoza Saltos", cargo: "Coordinador" } },
+  { nombre: "Educación Inicial Bilingüe", coordinador: { grado: "Licenciado", nombre: "Rider Eloy Mendoza Saltos", cargo: "Coordinador" } },
+  { nombre: "Educación Básica Bilingüe", coordinador: { grado: "Licenciado", nombre: "Rider Eloy Mendoza Saltos", cargo: "Coordinador" } },
   // AAP
-  { nombre: "Artes Plásticas", coordinador: { grado: "Licenciado", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
-  { nombre: "Entrenamiento Deportivo", coordinador: { grado: "Licenciado", nombre: "JORGE ISACIO CEDEÑO MOLINA", cargo: "Coordinador" } },
+  { nombre: "Artes Plásticas", coordinador: { grado: "Licenciado", nombre: "Jorge Isacio Cedeño Molina", cargo: "Coordinador" } },
+  { nombre: "Entrenamiento Deportivo", coordinador: { grado: "Licenciado", nombre: "Jorge Isacio Cedeño Molina", cargo: "Coordinador" } },
   // AD
-  { nombre: "Derecho", coordinador: { grado: "Abogado", nombre: "JOSE EUGENIO ZAMBRANO MENDIETA", cargo: "Coordinador" } },
+  { nombre: "Derecho", coordinador: { grado: "Abogado", nombre: "Jose Eugenio Zambrano Mendieta", cargo: "Coordinador" } },
   // Sin coordinador
   { nombre: "Gastronomía", coordinador: null },
   { nombre: "Electromecánica", coordinador: null },
@@ -314,8 +315,17 @@ function agregarMateria() {
       </div>
       <div>
         <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-1">Horas Clase</label>
-        <input type="text" name="horas" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" />
-        <p class="mt-1 text-[10px] text-slate-300">Ej: 08:00-10:00</p>
+        <div class="space-y-2">
+          <div>
+            <span class="block text-[10px] text-slate-300 mb-0.5">Inicio</span>
+            <input type="time" name="hora_inicio" lang="es-EC" step="60" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" aria-label="Hora de inicio" />
+          </div>
+          <div>
+            <span class="block text-[10px] text-slate-300 mb-0.5">Fin</span>
+            <input type="time" name="hora_fin" lang="es-EC" step="60" class="form-input materia-input w-full rounded-lg px-3 py-2 text-sm" aria-label="Hora de fin" />
+          </div>
+        </div>
+        <p class="mt-1 text-[10px] text-slate-300">Formato 24 h</p>
       </div>
       <div>
         <label class="block text-xs font-semibold text-slate-100 uppercase tracking-wider mb-0.5">Fecha</label>
@@ -381,6 +391,7 @@ function recolectarDatos() {
       }
       materia[campo] = valor;
     });
+    materia.horas = `${materia.hora_inicio}-${materia.hora_fin}`;
     // Inyectar nivel y paralelo estáticos en cada fila
     materia.nivel = nivelGlobal;
     materia.paralelo = paraleloGlobal;
@@ -449,6 +460,14 @@ function validarFormulario() {
         input.classList.remove("invalid");
       }
     });
+
+    const inicio = row.querySelector('input[name="hora_inicio"]');
+    const fin = row.querySelector('input[name="hora_fin"]');
+    if (inicio?.value && fin?.value && fin.value <= inicio.value) {
+      camposVacios.push(`Hora fin debe ser mayor a la hora de inicio (Materia #${i + 1})`);
+      inicio.classList.add("invalid");
+      fin.classList.add("invalid");
+    }
   });
 
   return camposVacios;
